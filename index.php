@@ -8,11 +8,13 @@
         <meta name="viewport" content="width=device.width, initial-scale=1" />
     </header>
     <body>
-        <p>Formulário Para Inscrição de Competidores</p>
+        <h1 align="center">Formulário Para Inscrição de Competidores</h1>
+        <hr />
         <form action="script.php" method="POST">
-            <p>Seu Nome: <input type="text" name="nome" /></p>
-            <p>Sua Idade: <input type="text" name="idade" /></p>
-            <p><input type="submit" value="Inscrever" /></p>
+            <p>Seu Nome: <input type="text" name="nome" required/></p>
+            <p>Sua Idade: <input type="number" name="idade" required/></p>
+            <p><input type="submit" value="Inscrever" />
+            <input type="reset" value="Limpar" /></p>
         </form>
     </body>
 </html>
