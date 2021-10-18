@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 $categorias = ['Infantil', 'Adolescente', 'Adulto'];
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
@@ -7,23 +9,28 @@ $idade = $_POST['idade'];
 
 // Validações
 if(empty($nome)){
-    echo "O nome não pode ser vazio!";
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio!';
+    echo ("<meta http-equiv='refresh' content='0;url=index.php'/>");
     return;
 }
-if(empty($idade)){
-    echo "A idade não pode ser vazia!";
+else if(empty($idade)){
+    $_SESSION['mensagem-de-erro'] = 'A idade não pode ser vazia!';
+    echo ("<meta http-equiv='refresh' content='0;url=index.php'/>");
     return;
 }
-if(strlen($nome)<3){
-    echo "O nome não pode ter menos que 3 caracteres.";
+else if(strlen($nome)<3){
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ter menos que 3 caracteres.';
+    echo ("<meta http-equiv='refresh' content='0;url=index.php'/>");
     return;
 }
-if(strlen($nome)>40){
-    echo "O nome é muito extenso tem mais de 40 caracteres.";
+else if(strlen($nome)>40){
+    $_SESSION['mensagem-de-erro'] = 'O nome é muito extenso tem mais de 40 caracteres.';
+    echo ("<meta http-equiv='refresh' content='0;url=index.php'/>");
     return;
 }
-if(!is_numeric($idade)){
-    echo "Valor digitado não é um número!";
+else if(!is_numeric($idade)){
+    $_SESSION['mensagem-de-erro'] = 'Valor digitado não é um número!';
+    echo ("<meta http-equiv='refresh' content='0;url=index.php'/>");
     return;
 }
 
