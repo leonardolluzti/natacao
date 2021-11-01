@@ -36,15 +36,19 @@ else if(!is_numeric($idade)){
 
 // Definir categoria do competidor
 if($idade>=6 && $idade<=12){
+    echo "<h1 align='center'>Competição de Natação</h1><hr />";
     echo "O competidor ".$nome." está na Categoria ".$categorias[0];
 }
 elseif($idade>=13 && $idade<=18){
+    echo "<h1 align='center'>Competição de Natação</h1><hr />";
     echo "O competidor ".$nome." está na Categoria ".$categorias[1];
 }
 elseif($idade>=18){
+    echo "<h1 align='center'>Competição de Natação</h1><hr />";
     echo "O competidor ".$nome." está na Categoria ".$categorias[2];
 }
 else{
+    echo "<h1 align='center'>Competição de Natação</h1><hr />";
     echo "O competidor ".$nome." não tem idade suficiente para competir!";
 }
 ?>
